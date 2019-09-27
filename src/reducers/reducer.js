@@ -5,7 +5,7 @@ import {REMOVE_FEATURE} from '../actions/REMOVE_FEATURE';
 
 };*/
 
-function reducer(state, action) {
+function reducer(state/*=intialState*/, action) {
     switch (action.type) {
         case ADD_FEATURE:
             return {}
