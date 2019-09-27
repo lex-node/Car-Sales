@@ -11,7 +11,7 @@ function reducer(state/*=intialState*/, action) {
             return {}
         case REMOVE_FEATURE:
             return {}
+        default:
+            return state;
     }
-default:
-    return state;
 }
