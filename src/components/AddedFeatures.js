@@ -3,18 +3,22 @@ import {connect} from 'react-redux';
 import AddedFeature from './AddedFeature';
 /*import {addFeature} from '../actions/ADD_FEATURE';*/
 
-class AddedFeatures extends React.Component {
-    state = {
-        features: []
+
+const mapStateToProps = state => {
+    return {
+        features: state.car.features
     };
+};
+
+class AddedFeatures extends React.Component {
 
     render() {
         return (
             <div className="content">
                 <h6>Added features:</h6>
-                {this.state.features.length ? (
+                {this.props.features.length ? (
                     <ol type="1">
-                        {this.state.features.map(item => (
+                        {this.props.features.map(item => (
                             <AddedFeature key={item.id} feature={item}/>
                         ))}
                     </ol>
@@ -25,12 +29,6 @@ class AddedFeatures extends React.Component {
         )
     };
 }
-
-const mapStateToProps = state => {
-    return {
-        features: state.car.features
-    };
-};
 
 
 export default connect(
