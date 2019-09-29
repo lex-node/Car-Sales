@@ -2,7 +2,7 @@ import React from 'react';
 import AdditionalFeature from './AdditionalFeature';
 import {connect} from 'react-redux';
 import {addFeature} from "../actions/actions";
-/*import mapDispatchToProps from "react-redux/es/connect/mapDispatchToProps";*/
+import mapDispatchToProps from "react-redux/es/connect/mapDispatchToProps";
 
 
 const mapStateToProps = state => ({

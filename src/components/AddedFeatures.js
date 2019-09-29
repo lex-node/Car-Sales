@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import AddedFeature from './AddedFeature';
-/*import {addFeature} from '../actions/ADD_FEATURE';*/
+import {removeFeature} from "../actions/actions";
 
 
 const mapStateToProps = state => {
@@ -18,7 +18,7 @@ class AddedFeatures extends React.Component {
                 {this.props.features.length ? (
                     <ol type="1">
                         {this.props.features.map(item => (
-                            <AddedFeature key={item.id} feature={item}/>
+                            <AddedFeature onClick={() => this.props.removeFeature(item)} key={item.id} feature={item}/>
                         ))}
                     </ol>
                 ) : (
@@ -32,5 +32,5 @@ class AddedFeatures extends React.Component {
 
 export default connect(
     mapStateToProps,
-    {}
+    {removeFeature}
 )(AddedFeatures);

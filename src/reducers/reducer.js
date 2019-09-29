@@ -21,7 +21,11 @@ function reducer(state = initialState, action) {
             let newCar = {...state.car, features: [...state.car.features, action.payload]}
             return {...state, car: newCar};
         case 'REMOVE_FEATURE':
-            return {}
+            let newFeatures = state.car.features.filter(feature => {
+                return !(feature.id === action.payload.id)
+            });
+            let newRemovedFeatureCar = {...state.car, features: newFeatures}
+            return {...state, car: newRemovedFeatureCar};
         default:
             return state;
     }
