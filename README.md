@@ -68,10 +68,10 @@ write the reducer logic for the actions 👉 Rinse and repeat
 
 ## _MVP Requirements:_
 
-- Move the given state to the reducer as the initial state for the Redux store.
-- Set up the Redux flow
-- User should be able to add features to their car
-- User should be able to remove added features from their car
+X Move the given state to the reducer as the initial state for the Redux store.
+X Set up the Redux flow
+X User should be able to add features to their car
+X User should be able to remove added features from their car
 - Total should update as user adds and removes features from their car
 
 ## Stretch Problems
