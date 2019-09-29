@@ -1,28 +1,26 @@
-import {ADD_FEATURE} from '../actions/ADD_FEATURE';
-import {REMOVE_FEATURE} from '../actions/REMOVE_FEATURE';
-
-  const initialState = {
+const initialState = {
     additionalPrice: 0,
     car: {
-      price: 26395,
-      name: '2019 Ford Mustang',
-      image:
-        'https://cdn.motor1.com/images/mgl/0AN2V/s1/2019-ford-mustang-bullitt.jpg',
-      features: []
+        price: 26395,
+        name: '2019 Ford Mustang',
+        image:
+            'https://cdn.motor1.com/images/mgl/0AN2V/s1/2019-ford-mustang-bullitt.jpg',
+        features: []
     },
     store: [
-      { id: 1, name: 'V-6 engine', price: 1500 },
-      { id: 2, name: 'Racing detail package', price: 1500 },
-      { id: 3, name: 'Premium sound system', price: 500 },
-      { id: 4, name: 'Rear spoiler', price: 250 }
+        {id: 1, name: 'V-6 engine', price: 1500},
+        {id: 2, name: 'Racing detail package', price: 1500},
+        {id: 3, name: 'Premium sound system', price: 500},
+        {id: 4, name: 'Rear spoiler', price: 250}
     ]
-  };
+};
 
-function reducer(state=initialState, action) {
+function reducer(state = initialState, action) {
     switch (action.type) {
-        case ADD_FEATURE:
-            return {}
-        case REMOVE_FEATURE:
+        case 'ADD_FEATURE':
+            let newCar = {...state.car, features: [...state.car.features, action.payload]}
+            return {...state, car: newCar};
+        case 'REMOVE_FEATURE':
             return {}
         default:
             return state;

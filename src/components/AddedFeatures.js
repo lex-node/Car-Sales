@@ -11,7 +11,6 @@ const mapStateToProps = state => {
 };
 
 class AddedFeatures extends React.Component {
-
     render() {
         return (
             <div className="content">
